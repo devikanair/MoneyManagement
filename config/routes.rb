@@ -1,4 +1,8 @@
 MoneyManagement::Application.routes.draw do
+  get "home/help"
+
+  get "home/about"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 

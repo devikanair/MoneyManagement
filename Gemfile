@@ -10,7 +10,7 @@ group :production do
 end
 group :development, :test do
   gem 'sqlite3'
-  gem 'rspec-rails', '2.11.0'
+  gem 'rspec-rails'
 end
 
 group :test do
