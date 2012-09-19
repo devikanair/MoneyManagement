@@ -1,7 +1,7 @@
 MoneyManagement::Application.routes.draw do
-  get "home/help"
-
-  get "home/about"
+  match '/help', to: 'home#help'      #also adds help_path
+  match '/about', to: 'home#about'
+  root to: 'home#home'
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
