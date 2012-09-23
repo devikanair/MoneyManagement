@@ -1,0 +1,9 @@
+<li>
+  <span class="amount"><%= expense.amount %></span>
+  <span class="comment">
+    (<%= expense.comment %>)
+
+  </span>
+  <%= link_to 'Delete this expense' , expense, method: :delete, data: { confirm: 'Are you sure?' } %>
+
+</li>

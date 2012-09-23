@@ -1,0 +1,11 @@
+<%= form_for(@expenses) do |f| %>
+    <div class="field">
+      <%= f.text_field :comment, placeholder: "Comment.." %>
+    </div>
+    <div class="field">
+      <%=  f.number_field :amount, placeholder: "0.0" %>
+    </div>
+
+
+    <%= f.submit "Add new expense", class: "btn btn-large btn-primary" %>
+<% end %>

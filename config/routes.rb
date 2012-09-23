@@ -1,12 +1,20 @@
 MoneyManagement::Application.routes.draw do
+  get "expense/new"
+
+  get "expense/delete"
+
   get "sessions/new"
 
-  get "sessions/create"
+  get "sessions/new"
 
   get "sessions/destroy"
 
+
   resources :users, :controller=>:user
   resources :sessions, only: [:new, :create, :destroy]
+  resources :expenses, :controller=>:expenses, only: [:create, :destroy]
+  #resources :bank, :controller=> :bank
+
 
   match '/help', to: 'home#help'      #also adds help_path
   match '/about', to: 'home#about'

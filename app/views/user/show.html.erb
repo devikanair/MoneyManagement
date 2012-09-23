@@ -4,6 +4,16 @@
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
-  Your current cash balance is <%=  @user.cash %>    <br/>
-  Your account is <%=  @user.account %>
-  <p><%= link_to "Edit Profile",    edit_user_path %></p>
+  <h2>Your current cash balance is <%=  @user.cash %>    <br/>
+  Account number <%=  @user.account %>                       </h2>
+<br/>
+<br/>
+<h5>
+  <% if @user.expenses.any? %>
+      <h3>Current Expenses (<%= @user.expenses.count %>)</h3>
+      <ul class="expenses">
+        <%= render @expenses %>    <br/>
+      </ul>
+  <% end %>
+</h5>
+  <!--p><!--%= link_to "Edit Profile", edit_user_path %></p>

@@ -1,12 +1,15 @@
 <div class="center hero-unit">
   <h1>Welcome to Money Management</h1>
 
-  <p>
-    Manage your accounts and expenditure by adding details of your spends, earnings and accounts with friends/roommates
-  </p>
+
   <% if signed_in? %>
-  <!--Put something nice in here that user would find useful -->
+      <%= render 'shared/expense_form' %>
+      <%= link_to "view my profile", current_user %>
+      (<%= pluralize(current_user.expenses.count, "Expenses")%>)
   <%else%>
+      <p>
+        Manage your accounts and expenditure by adding details of your spends, earnings and accounts with friends/roommates
+      </p>
       <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
    <%end%>
 </div>

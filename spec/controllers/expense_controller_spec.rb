@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe SessionsController do
+describe ExpenseController do
 
   describe "GET 'new'" do
     it "returns http success" do
@@ -9,16 +9,9 @@ describe SessionsController do
     end
   end
 
-  describe "GET 'new'" do
+  describe "GET 'delete'" do
     it "returns http success" do
-      get 'new'
-      response.should be_success
-    end
-  end
-
-  describe "GET 'destroy'" do
-    it "returns http success" do
-      get 'destroy'
+      get 'delete'
       response.should be_success
     end
   end

@@ -1,6 +1,8 @@
 source 'https://rubygems.org'
 
 gem 'factory_girl_rails', '1.4.0'
+gem 'will_paginate'
+gem 'bootstrap-will_paginate'
 gem 'rails', '3.2.7'
 gem 'bootstrap-sass', '2.0.4'
 gem 'bcrypt-ruby', '3.0.1'
