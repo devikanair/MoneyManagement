@@ -1,0 +1,26 @@
+<% provide(:title, 'Edit profile information') %>
+<h1>Edit profile</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+        <%= render 'shared/error_messages' %>
+
+        <%= f.label :name %>
+        <%= f.text_field :name %>
+
+        <%= f.label :account, "Account number in bank" %>
+        <%= f.number_field :account %>
+
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+
+        <%= f.label :password_confirmation, "Confirmation" %>
+        <%= f.password_field :password_confirmation %>
+
+        <p>
+          <%= f.submit "Edit my profile", class: "btn btn-large btn-primary" %>
+        </p>
+    <% end %>
+  </div>
+</div>

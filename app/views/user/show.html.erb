@@ -1,0 +1,9 @@
+<% provide(:title, @user.name) %>
+<h1>Money Management</h1>
+<h1>
+  <%= gravatar_for @user %>
+  <%= @user.name %>
+</h1>
+  Your current cash balance is <%=  @user.cash %>    <br/>
+  Your account is <%=  @user.account %>
+  <p><%= link_to "Edit Profile",    edit_user_path %></p>
