@@ -7,7 +7,6 @@
   <h2>Your current cash balance is <%= @user.cash - @spent %>        <br/>
   Account number <%=  @user.account %>                       </h2>
 <br/>
-<br/>
 <h5>
   <% if @user.expenses.any? %>
       <h3>Current Expenses (<%= @user.expenses.count %>)</h3>
