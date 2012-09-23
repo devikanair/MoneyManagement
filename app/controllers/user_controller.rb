@@ -8,6 +8,8 @@ class UserController < ApplicationController
   def show
     @user = User.find(params[:id])
     @expenses = @user.expenses
+    @spent=0
+    @expenses.each {|loop| @spent = @spent +   loop.amount }
   end
   def edit
     @user = User.find(params[:id])

@@ -4,7 +4,7 @@
   <%= gravatar_for @user %>
   <%= @user.name %>
 </h1>
-  <h2>Your current cash balance is <%=  @user.cash %>    <br/>
+  <h2>Your current cash balance is <%= @user.cash - @spent %>        <br/>
   Account number <%=  @user.account %>                       </h2>
 <br/>
 <br/>
