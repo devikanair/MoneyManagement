@@ -1,5 +1,5 @@
 MoneyManagement::Application.routes.draw do
-  get "user/new"
+  routes :users, :controller=>:user
 
   match '/help', to: 'home#help'      #also adds help_path
   match '/about', to: 'home#about'
