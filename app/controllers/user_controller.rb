@@ -9,6 +9,7 @@ class UserController < ApplicationController
     @user = User.find(params[:id])
   end
   def create
+    sign_in @user
     @user = User.new(params[:user])
     if @user.save
       redirect_to @user
