@@ -1,9 +1,10 @@
 MoneyManagement::Application.routes.draw do
-  get "user/new"
+  resources :users, :controller=>:user
 
   match '/help', to: 'home#help'      #also adds help_path
   match '/about', to: 'home#about'
   match '/signup', to: 'user#new'
+
   root to: 'home#home'
 
   # The priority is based upon order of creation:
