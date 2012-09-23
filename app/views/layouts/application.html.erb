@@ -17,10 +17,19 @@
 <%= link_to "A Money Management Application", '#', id: "logo" %>
           <nav>
             <ul class="nav pull-right">
-              <li><%= link_to "Home",    root_path %></li>
+              <li><%= link_to "Home",    root_path %>      </li>
+                <% if signed_in? %>
+                    <%= link_to "Profile", user_path(current_user) %>
+                    <%= link_to "Users", '#' %>
+                    <%= link_to "Settings", '#' %>
+                    <%= link_to "Sign out", signout_path, method: "delete" %>
+                    <% else %>
+                  <li><%= link_to "Sign in", '#' %></li>
+                  <%end%>
               <li><%= link_to "About",    about_path %></li>
               <li><%= link_to "Help",    help_path %></li>
-              <li><%= link_to "Sign in", '#' %></li>
+
+
             </ul>
           </nav>
         </div>

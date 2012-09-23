@@ -1,11 +1,21 @@
 MoneyManagement::Application.routes.draw do
+  get "sessions/new"
+
+  get "sessions/create"
+
+  get "sessions/destroy"
+
   resources :users, :controller=>:user
+  resources :sessions, only: [:new, :create, :destroy]
 
   match '/help', to: 'home#help'      #also adds help_path
   match '/about', to: 'home#about'
   match '/signup',  to: 'user#new'
 
   root to: 'home#home'
+
+  match '/signin',  to: 'sessions#new'
+  match '/signout', to: 'sessions#destroy', via: :delete
 
   # The priority is based upon order of creation:
   # first created -> highest priority.
