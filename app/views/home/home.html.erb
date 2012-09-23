@@ -4,7 +4,9 @@
   <p>
     Manage your accounts and expenditure by adding details of your spends, earnings and accounts with friends/roommates
   </p>
-
-  <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
-
+  <% if signed_in? %>
+  <!--Put something nice in here that user would find usefuk -->
+  <%else%>
+      <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+   <%end%>
 </div>
