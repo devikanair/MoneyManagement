@@ -3,7 +3,8 @@ class UserController < ApplicationController
     @user = User.new
   end
   def index
-    @users = User.all
+    @users = User.paginate(:per_page => 3, :page => params[:page])
+    #User.all
   end
   def show
     @user = User.find(params[:id])
