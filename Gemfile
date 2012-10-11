@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
 
+gem 'nokogiri'
 gem 'factory_girl_rails', '1.4.0'
 gem 'will_paginate'
 gem 'bootstrap-will_paginate'

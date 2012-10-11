@@ -1,5 +1,5 @@
-<div class="center hero-unit">
-  <h1>Welcome to Money Management</h1>
+<% provide(:title, 'About') %>
+<% provide(:heading, 'Welcome to Money Management') %>
 
 
   <% if signed_in? %>
@@ -7,9 +7,20 @@
       <%= link_to "view my profile", current_user %>
       (<%= pluralize(current_user.expenses.count, "Expenses")%>)
   <%else%>
+    <div class="pull-right">
       <p>
-        Manage your accounts and expenditure by adding details of your spends, earnings and accounts with friends/roommates
+        <% imagename= "money" + [1,2,3].sample().to_s + ".jpg" %>
+        <%= image_tag(imagename, :size => "300x300  ") %>
       </p>
-      <%= link_to "Sign up now!", signup_path, class: "btn btn-large btn-primary" %>
+    </div>
+    <div class="pagination">
+      Manage your accounts and expenditure by adding details of your spendings, earnings and accounts with friends/roommates! Its FREE!!<br/><br/>
+    </div>
+    <div class="pagination-centered">
+      <%= link_to "Sign up immediately!!", signup_path, class: "btn" %>
+    </div>
+      <p>  <br/><br/>
+        Existing user? <%= link_to "Sign in", signin_path %> to access your account details.<br/>
+      </p>
    <%end%>
-</div>
+
