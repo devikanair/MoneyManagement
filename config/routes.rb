@@ -9,12 +9,11 @@ MoneyManagement::Application.routes.draw do
 
   get "sessions/destroy"
 
-
-  resources :users, :controller=>:user
+  match 'user/cash' => 'user#cash', :as => :user_cash
+  resources :users, :controller=>:user, only: [:create,:new,:index,:show,:edit,:update]
   resources :sessions, only: [:new, :create, :destroy]
-  resources :expenses, :controller=>:expenses, only: [:create, :destroy]
+  resources :expenses, :controller=>:expenses, only: [:create, :destroy, :show]
   #resources :bank, :controller=> :bank
-
 
   match '/help', to: 'home#help'      #also adds help_path
   match '/about', to: 'home#about'

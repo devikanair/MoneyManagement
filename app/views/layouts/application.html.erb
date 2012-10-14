@@ -1,47 +1,51 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= full_title(yield(:title)) %></title>
-    <%= stylesheet_link_tag    "application", media: "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "jquery" %>
-    <%= csrf_meta_tags %>
-    <!--[if lt IE 9]>
-    <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-  </head>
-  <body>
-  <div class="page-header">
-    <h1><%=  yield(:heading) %></h1>
-  </div>
-  <header class="navbar navbar-fixed-top">
-    <div class="navbar-inner">
+<head>
+  <title><%= full_title(yield(:title)) %></title>
+  <%= stylesheet_link_tag    "application", media: "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= javascript_include_tag "jquery" %>
+  <%= csrf_meta_tags %>
+  <!--[if lt IE 9]>
+  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+  <![endif]-->
+</head>
+<body>
+<div class="page-header">
+  <h1><%=  yield(:heading) %></h1>
+</div>
+<header class="navbar navbar-fixed-top">
+  <div class="navbar-inner">
     <div class="container">
-    <%= link_to "A Money Management Application", root_path %>
-    <nav>
-       <ul class="nav pull-left">
+      <%= link_to "A Money Management Application", root_path %>
+      <nav>
+        <ul class="nav pull-left">
           <li><img alt="Money Management" src="/assets/Logo.png"  /></li>
-       </ul>
-       <ul class="nav pull-right">
+        </ul>
+        <ul class="nav pull-right">
           <li><%= link_to "Home",    root_path %>      </li>
           <li><%= link_to "About",    about_path %></li>
-       <% if signed_in? %>
-          <li><%= link_to "Profile", user_path(current_user) %></li>
-          <li><%= link_to "Users", users_path %>                                   </li>
-          <li><%= link_to "Settings", edit_user_path(current_user) %>                           </li>
-          <li><%= link_to "Help",    help_path %></li>
-          <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
-       <% else %>
-          <li><%= link_to "Help",    help_path %></li>
-          <li><%= link_to "Sign in", signin_path %></li>
-       <%end%>
-       </ul>
-    </nav>
+          <% if signed_in? %>
+              <li><%= link_to "Profile", user_path(current_user) %></li>
+              <li><%= link_to "Users", users_path %>                                   </li>
+              <li><%= link_to "Settings", edit_user_path(current_user) %>                           </li>
+              <li><%= link_to "Help",    help_path %></li>
+              <li><%= link_to "Sign out", signout_path, method: "delete" %></li>
+          <% else %>
+              <li><%= link_to "Help",    help_path %></li>
+              <li><%= link_to "Sign in", signin_path %></li>
+          <%end%>
+        </ul>
+      </nav>
     </div>
-    </div>
-  </header>
-  <div class="container">
-     <%= yield %>
   </div>
-  </body>
+</header>
+<div class="container">
+  <div class="span19 pull-right">
+       <% image_name = "money"+[1,2,3].sample().to_s+".jpg"  %>
+       <%= image_tag(image_name, :size=> "300x300" )%>
+  </div>
+  <%= yield %>
+</div>
+</body>
 </html>

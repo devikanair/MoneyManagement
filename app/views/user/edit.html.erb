@@ -1,10 +1,8 @@
 <% provide(:title, 'Edit profile information') %>
-<h1>Edit profile</h1>
-
+<% provide(:heading, 'Edit Profile') %>
 <div class="row">
-  <div class="span6 offset3">
+  <div class="pagination">
     <%= form_for(@user) do |f| %>
-        <%= render 'shared/error_messages' %>
 
         <%= f.label :name %>
         <%= f.text_field :name %>
@@ -22,7 +20,7 @@
         <%= f.password_field :password_confirmation %>
 
         <p>
-          <%= f.submit "Edit my profile", class: "btn btn-large btn-primary" %>
+          <%= f.submit "Edit my profile", class: "btn" %>
         </p>
     <% end %>
   </div>

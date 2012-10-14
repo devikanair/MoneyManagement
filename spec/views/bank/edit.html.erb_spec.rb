@@ -1,5 +1,5 @@
 require 'spec_helper'
 
-describe "bank/edit.html.erb" do
+describe "bank/somrtheditthedit.html.erb" do
   pending "add some examples to (or delete) #{__FILE__}"
 end

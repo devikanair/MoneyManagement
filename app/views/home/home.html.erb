@@ -1,18 +1,13 @@
-<% provide(:title, 'About') %>
+<% provide(:title, 'Home') %>
 <% provide(:heading, 'Welcome to Money Management') %>
-
 
   <% if signed_in? %>
       <%= render 'shared/expense_form' %>
       <%= link_to "view my profile", current_user %>
-      (<%= pluralize(current_user.expenses.count, "Expenses")%>)
+      (<%= pluralize(current_user.expenses.count, "pending expenses")%>)
+               <br/><br/>
+    <blink> Coming soon! Share your expenses with friends and settle accounts online </blink>
   <%else%>
-    <div class="pull-right">
-      <p>
-        <% imagename= "money" + [1,2,3].sample().to_s + ".jpg" %>
-        <%= image_tag(imagename, :size => "300x300  ") %>
-      </p>
-    </div>
     <div class="pagination">
       Manage your accounts and expenditure by adding details of your spendings, earnings and accounts with friends/roommates! Its FREE!!<br/><br/>
     </div>

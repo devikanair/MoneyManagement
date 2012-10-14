@@ -1,9 +1,16 @@
-<li>
+<% if((!expense.nil?) && (!expense.amount.nil?) && (expense.amount>0)) %>
+    <tr>
+    <td>
   <span class="amount"><%= expense.amount %></span>
   <span class="comment">
     (<%= expense.comment %>)
-
   </span>
-  <%= link_to 'Delete this expense' , expense, method: :delete, data: { confirm: 'Are you sure?' } %>
-
-</li>
+    </td>
+    <!--td>
+  <link_to 'Delete' , expense, method: :delete, data: { confirm: 'That was lucky! Sure your expense is waivered?' }, class: "btn" >
+    </td-->
+    <td>
+  <%= link_to 'Paid this one?' , expense,  method: :delete, data: { confirm: 'Sure you got lucky?' }, class: "btn" %>
+    </td>
+    </tr>
+<%end%>

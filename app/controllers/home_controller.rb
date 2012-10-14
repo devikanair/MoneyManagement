@@ -8,6 +8,6 @@ class HomeController < ApplicationController
   end
 
   def home
-    @expenses = current_user.expenses.build if signed_in?
+    @expenses_form = current_user.expenses.build if signed_in?
   end
 end

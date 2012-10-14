@@ -1,6 +1,8 @@
+//When the page loads, get all the href links in pagination div and enable js
 $(function(){
-       $(".pagination a").click(function(){
-           $.get(this.href, null, null, "script");
-           return false;
-       })
-}  );
+    $(".pagination a").live("click",function(){
+        $.get(this.href, null, null, "script");
+        return false;
+    })
+}
+);

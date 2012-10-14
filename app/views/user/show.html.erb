@@ -1,18 +1,39 @@
 <% provide(:title, @user.name) %>
-<h1>Money Management</h1>
-<h1>
-  <%= gravatar_for @user %>
-  <%= @user.name %>
-</h1>
-  <h2>Your current cash balance is <%= @user.cash - @spent %>        <br/>
+<% provide(:heading, gravatar_for(@user)+ @user.name) %>
+  <h2>Your current cash balance is <%= @user.cash%>, free cash balance is <%= @user.cash - @spent %><br/>
   Account number <%=  @user.account %>                       </h2>
 <br/>
 <h5>
-  <% if @user.expenses.any? %>
-      <h3>Current Expenses (<%= @user.expenses.count %>)</h3>
-      <ul class="expenses">
-        <%= render @expenses %>    <br/>
-      </ul>
-  <% end %>
+ <div class="row">
+
+           <% if @user.expenses.count > 0 %>
+               <h4>Current Expenses (<%= @user.expenses.count %>)</h4>
+                <table border="0">
+                <%= render @expenses %>
+                </table>
+           <% else %>
+               <h4>You do not have any expenses now!</h4>
+           <%end%>
+   <br/><br/>
+   <div class="span3">
+     <table border="0">
+       <tr>
+         <td>
+           <%= render 'shared/expense_form' %>
+         </td>
+         <td>
+         </td>
+         <td>
+           <%= form_tag user_cash_path %>
+               Payday? Got lucky?
+               <div class="field">
+                 <%= text_field_tag(:cash) %>
+               </div>
+           <%= submit_tag "Add new pay",class: "btn" %>
+         </td>
+       </tr>
+     </table>
+  </div>
+ </div>
 </h5>
   <!--p><!--%= link_to "Edit Profile", edit_user_path %></p>

@@ -1,7 +1,7 @@
 <% provide(:title, 'Sign up') %>
 <% provide(:heading, 'Sign up') %>
 <div class="row">
-  <div class="pagination-centered">
+  <div class="pagination">
     <%= form_for(@user) do |f| %>
         <%= render 'shared/error_messages' %>
         <%= f.label :name %>

@@ -1,11 +1,10 @@
-<%= form_for(@expenses) do |f| %>
+<%= form_for(@expenses_form) do |f| %>
+    New purchase? Paid bills?
     <div class="field">
       <%= f.text_field :comment, placeholder: "Comment.." %>
     </div>
     <div class="field">
       <%=  f.number_field :amount, placeholder: "0.0" %>
     </div>
-
-
-    <%= f.submit "Add new expense", class: "btn btn-large btn-primary" %>
+    <%= f.submit "Add new expense", class: "btn" %>
 <% end %>

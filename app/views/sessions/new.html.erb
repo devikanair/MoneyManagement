@@ -1,8 +1,17 @@
 <% provide(:title, "Sign in") %>
 <% provide(:heading, 'Sign in') %>
 <div class="row">
-  <div class="span6 offset3">
-    <%= render :partial => 'shared/signin' %>
-    <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+  <div class="pagination">
+    <%= form_for(:session, url: sessions_path) do |f| %>
+        <%= f.label :email %>
+        <%= f.text_field :email %>
+        <%= f.label :password %>
+        <%= f.password_field :password %>   <br/>
+        <%= f.submit "Sign in", class: "btn" %>
+    <% end %>
   </div>
 </div>
+<div class="row">
+  <p>New user? <%= link_to "Sign up now!", signup_path %></p>
+</div>
+

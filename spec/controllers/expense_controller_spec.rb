@@ -7,6 +7,7 @@ describe ExpenseController do
       get 'new'
       response.should be_success
     end
+    it { should_not respond_to(:index)}
   end
 
   describe "GET 'delete'" do
